@@ -6,14 +6,17 @@
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Always put a space between an operator and its operands.
+ 
 ``` objc
 total = first + second;
 ```
  * Never put a space between a colon and the following value.
+ 
 ``` objc
 [self updateWithDeltaTime:0.3f];
 ```
  * Always put a space after a semicolon (inside `for` loops for example).
+ 
 ``` objc
 for (NSUInteger i = 0; i < 10; ++i)
 {
