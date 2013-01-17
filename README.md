@@ -151,7 +151,7 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 
 ## Expressions
 
- * Use dot-syntax for "simple" getters and setters, including class methods (like `NSFileManager.defaultManager`).
+ * Use dot-syntax for "simple" getters and setters.
  * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
  * Comparisons should always be explicit.
  * Prefer positive comparisons to negative.
