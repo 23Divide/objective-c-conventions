@@ -1,26 +1,98 @@
+# 23Divide Objective-C coding conventions
+
 ## Whitespace
 
  * Tabs, not spaces.
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
+ * Always put a space between an operator and its operands.
+ * Never put a space between a colon and the following value.
 
 ## Documentation and Organization
 
  * Comments should be hard-wrapped at 80 characters.
  * Comments should be Apple-style.
- * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations
+ * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations.
+
+## Indentation
+
+ * Simple rule: every time there's a open curly brace, enclosed code must be indented.
+ * Always use tabs to indent; never use spaces.
+ * XCode will automatically indent your code most of the time; don't fight it.
+
+## Naming of variables
+
+ * Variables (including ivars) should use Camel Case.
+ * Prefix a variable with an underscore only if it's an ivar.
+ * Only use alphanumeric characters.
+ * No stupid abbreviations like "btn" for "button" or "scr" for "score".
+ * No single-letter variables except for loops (like in a simple for-loop with an integer variable).
+ * Be descriptive in your variable names.
+ * Compose a variable name with concatenated english words.
+ * Always start with a small letter for the first word.
+ * Always use a capital letter for following words.
+ * Don't use prefixes like "my" or "this" or "another".
+ 
+```objc
+int terrorLevel = 3;
+NSArray *platforms;
+NSDictionary *swiftRadianceThresholds;
+```
+
+## Naming of methods
+
+ * Be descriptive, in plain english.
+ * No abbreviations.
+ * Explicitly name all parameters.
+ * Follow [Apple naming conventions](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html). 
 
 ## Declarations
 
+### ivars
+
+ * One ivar per line; don't declare multiple ivars using the comma.
+ * Use empty lines to group ivars logically.
  * Never declare an ivar unless you need to change its type from its declared property.
- * Don’t use line breaks in method declarations.
+  
+### Properties
+
+ * Declare properties after ivars and before methods.
  * Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
  * Declare properties `copy` if they return immutable objects and aren't ever mutated in the implementation.
  * Don't use `@synthesize` unless the compiler requires it. Note that optional properties in protocols must be explicitly synthesized in order to exist.
- * Instance variables should be prefixed with an underscore (just like when implicitly synthesized).
- * Don't put a space between an object type and the protocol it conforms to.
+ 
+### Methods
+
+ * Start with class methods, followed by init methods.
+ * Seprate class methods from instance methods with an empty line.
+ * Follow this style:
+   - Start with `-` or `+` character
+   - Space
+   - Return type
+   - Method name (no space between return type and this)
+   - Colon
+   - Parameter type (no space between colon and this)
+   - Parameter name (no space between parameter type and this)
+  
+```objc
++ (id)terrorWithLevel:(NSUInteger)level;
+
+- (id)initWithLevel:(NSUInteger)level;
+- (id)initWithLevel:(NSUInteger)level assets:(NSArray *)assets;
+- (void)updateSceneWithDeltaTime:(float)deltaTime;
+```
+ 
+### Protocols
+
+ * Declare protocols before class interface.
+ * Follow the same rules as in Methods.
+ 
+### Miscellaneous 
+
+ * Use forward class declarations whenever possible with `@class`.
+ * Don't put a space between an object type and the protocol it conforms to. 
  
 ```objc
 @property (attributes) id<Protocol> object;
