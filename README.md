@@ -15,7 +15,7 @@ total = first + second;
 ``` objc
 [self updateWithDeltaTime:0.3f];
 ```
- * Always put a space after a semicolon (inside `for` loops for example).
+ * Always put a space after a semicolon inside `for` loops.
  
 ``` objc
 for (NSUInteger i = 0; i < 10; ++i)
@@ -67,6 +67,7 @@ if (isShit == YES)
  * Always use a capital letter for following words.
  * Don't use prefixes like "my" or "this" or "another".
  * No underscores to separate words in variable names (eg. background_image should be backgroundImage)
+ * Acceptable abbreviations as per [Apple naming conventions](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/Articles/APIAbbreviations.html#//apple_ref/doc/uid/20001285-BCIHCGAE)
  
 ```objc
 NSInteger terrorLevel = 3;
