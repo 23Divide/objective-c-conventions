@@ -7,7 +7,7 @@
 ## Documentation and Organization
 
  * Comments should be hard-wrapped at 80 characters.
- * Comments should be [Tomdoc](http://tomdoc.org/)-style.
+ * Comments should be Apple-style.
  * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations
 
 ## Declarations
@@ -58,12 +58,12 @@ NewType a = (NewType)b;
  * Always surround `if` bodies with curly braces even if it's a single-line `if`.
  * All curly braces should begin on a new line. They should end on a new line.
  
- ```objc
- if (variable == 3)
- {
- 	[self doSomething];
- }
- ```
+```objc
+if (variable == 3)
+{
+	[self doSomething];
+}
+```
  
  * Put a single space after keywords and before their parentheses.
  * Return and break early.
