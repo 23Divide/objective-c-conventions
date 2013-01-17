@@ -6,41 +6,9 @@
 
 ## Documentation and Organization
 
- * All method declarations should be documented.
  * Comments should be hard-wrapped at 80 characters.
  * Comments should be [Tomdoc](http://tomdoc.org/)-style.
- * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
-
-```objc
-#pragma mark Properties
-
-@dynamic someProperty;
-
-- (void)setCustomProperty:(id)value {}
-
-#pragma mark Lifecycle
-
-+ (id)objectWithThing:(id)thing {}
-- (id)init {}
-
-#pragma mark Drawing
-
-- (void)drawRect:(CGRect) {}
-
-#pragma mark Another functional grouping
-
-#pragma mark GHSuperclass
-
-- (void)someOverriddenMethod {}
-
-#pragma mark NSCopying
-
-- (id)copyWithZone:(NSZone *)zone {}
-
-#pragma mark NSObject
-
-- (NSString *)description {}
-```
+ * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations
 
 ## Declarations
 
@@ -69,21 +37,14 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 
 ## Expressions
 
- * Don't access an ivar unless you're in `-init` or `-dealloc`.
  * Use dot-syntax for "simple" getters and setters, including class methods (like `NSFileManager.defaultManager`).
  * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
- * Comparisons should be explicit for everything except `BOOL`s.
+ * Comparisons should always be explicit.
  * Prefer positive comparisons to negative.
  * Long form ternary operators should be wrapped in parentheses and only used for assignment and arguments.
 
 ```objc
 Blah *a = (stuff == thing ? foo : bar);
-```
-
-* Short form, `nil` coalescing ternary operators should avoid parentheses.
-
-```objc
-Blah *b = thingThatCouldBeNil ?: defaultValue;
 ```
 
  * There shouldn't be a space between a cast and the variable being cast.
@@ -94,18 +55,32 @@ NewType a = (NewType)b;
 
 ## Control Structures
 
- * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
- * All curly braces should begin on the same line as their associated statement. They should end on a new line.
+ * Always surround `if` bodies with curly braces even if it's a single-line `if`.
+ * All curly braces should begin on a new line. They should end on a new line.
+ 
+ ```objc
+ if (variable == 3)
+ {
+ 	[self doSomething];
+ }
+ ```
+ 
  * Put a single space after keywords and before their parentheses.
  * Return and break early.
  * No spaces between parentheses and their contents.
 
 ```objc
-if (shitIsBad) return;
+if (shitIsBad)
+{
+	return;
+}
 
-if (something == nil) {
+if (something == nil) 
+{
 	// do stuff
-} else {
+} 
+else
+{
 	// do other stuff
 }
 ```
@@ -117,25 +92,18 @@ if (something == nil) {
  * Block definitions should omit their arguments if they are `void`.
 
 ```objc
-void (^blockName1)(void) = ^{
+void (^blockName1)(void) = ^
+{
     // do some things
 };
 
-id (^blockName2)(id) = ^ id (id args) {
+id (^blockName2)(id) = ^ id (id args) 
+{
     // do some things
 };
 ```
 
 ## Literals
-
- * The contents of array and dictionary literals should have a space on both sides.
- * Dictionary literals should have no space between the key and the colon, and a single space between colon and value.
-
-``` objc
-NSArray *theShit = @[ @1, @2, @3 ];
-
-NSDictionary *keyedShit = @{ GHDidCreateStyleGuide: @YES };
-```
 
  * Longer or more complex literals should be split over multiple lines (optionally with a terminating comma):
 
