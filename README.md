@@ -6,7 +6,20 @@
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Always put a space between an operator and its operands.
+``` objc
+total = first + second;
+```
  * Never put a space between a colon and the following value.
+``` objc
+[self updateWithDeltaTime:0.3f];
+```
+ * Always put a space after a semicolon (inside `for` loops for example).
+``` objc
+for (NSUInteger i = 0; i < 10; ++i)
+{
+	[self doShit];
+}
+```
  * Put a single space after keywords and before their parentheses.
  * No spaces between parentheses and their contents.
  * Blocks should have a space between their return type and name.
@@ -28,6 +41,16 @@ NewType newTypeVariable = (NewType)oldTypeVariable;
  * Always use tabs to indent; never use spaces.
  * XCode will automatically indent your code most of the time; don't fight it.
 
+``` objc
+if (isShit == YES)
+{
+	while (shitIsHittingTheFan == YES)
+	{
+		[self doShit];
+	}
+}
+```
+
 ## Naming of variables
 
  * Variables (including ivars) should use Camel Case.
@@ -45,6 +68,11 @@ NewType newTypeVariable = (NewType)oldTypeVariable;
 int terrorLevel = 3;
 NSArray *platforms;
 NSDictionary *swiftRadianceThresholds;
+
+for (NSUInteger i = 0; i < 10; ++i)
+{
+	NSLog(@"Counting %d", i);
+}
 ```
 
 ## Naming of methods
