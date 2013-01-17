@@ -102,7 +102,7 @@ for (NSUInteger i = 0; i < 10; ++i)
  * Always declare memory-management semantics even on `readonly` properties.
  * Declare properties `readonly` if they are only set once in `-init`.
  * Declare properties `copy` if they return immutable objects and aren't ever mutated in the implementation.
- * Don't use `@synthesize` unless the compiler requires it. Note that optional properties in protocols must be explicitly synthesized in order to exist.
+ * Don't use `@synthesize` unless the compiler requires it. As of LLVM 4.3 properties no longer to be @synthesize'd. However, optional properties in protocols must be explicitly @synthesize'd in order to exist.
  * One property per line; one `@synthesize` per line.
  
 ### Methods
