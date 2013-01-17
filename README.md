@@ -56,7 +56,7 @@ if (isShit == YES)
 
 ## Naming of variables
 
- * Variables (including ivars) should use Camel Case.
+ * Variables (including ivars) should use camelCase
  * Prefix a variable with an underscore only if it's an ivar.
  * Only use alphanumeric characters.
  * No stupid abbreviations like "btn" for "button" or "scr" for "score".
