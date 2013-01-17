@@ -67,7 +67,6 @@ if (isShit == YES)
  * Always use a capital letter for following words.
  * Don't use prefixes like "my" or "this" or "another".
  * No underscores to separate words in variable names (eg. background_image should be backgroundImage)
- * Primitive data types (eg. int, float) should use Apple's defined types instead (eg. NSInteger, CGFloat)
  
 ```objc
 NSInteger terrorLevel = 3;
