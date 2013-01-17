@@ -66,6 +66,7 @@ if (isShit == YES)
  * Always start with a small letter for the first word.
  * Always use a capital letter for following words.
  * Don't use prefixes like "my" or "this" or "another".
+ * No underscores to separate words in variable names (eg. background_image should be backgroundImage)
  
 ```objc
 int terrorLevel = 3;
