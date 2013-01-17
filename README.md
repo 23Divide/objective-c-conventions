@@ -1,12 +1,20 @@
 # 23Divide Objective-C coding conventions
 
-## Whitespace
+## Whitespaces
 
  * Tabs, not spaces.
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Always put a space between an operator and its operands.
  * Never put a space between a colon and the following value.
+ * Put a single space after keywords and before their parentheses.
+ * No spaces between parentheses and their contents.
+ * Blocks should have a space between their return type and name.
+ * There shouldn't be a space between a cast and the variable being cast.
+
+``` objc
+NewType newTypeVariable = (NewType)oldTypeVariable;
+```
 
 ## Documentation and Organization
 
@@ -28,7 +36,7 @@
  * No stupid abbreviations like "btn" for "button" or "scr" for "score".
  * No single-letter variables except for loops (like in a simple for-loop with an integer variable).
  * Be descriptive in your variable names.
- * Compose a variable name with concatenated english words.
+ * Compose a variable name using concatenated english words.
  * Always start with a small letter for the first word.
  * Always use a capital letter for following words.
  * Don't use prefixes like "my" or "this" or "another".
@@ -51,7 +59,7 @@ NSDictionary *swiftRadianceThresholds;
 ### ivars
 
  * One ivar per line; don't declare multiple ivars using the comma.
- * Use empty lines to group ivars logically.
+ * Use empty lines to group ivars in logical chunks.
  * Never declare an ivar unless you need to change its type from its declared property.
   
 ### Properties
@@ -62,11 +70,12 @@ NSDictionary *swiftRadianceThresholds;
  * Declare properties `readonly` if they are only set once in `-init`.
  * Declare properties `copy` if they return immutable objects and aren't ever mutated in the implementation.
  * Don't use `@synthesize` unless the compiler requires it. Note that optional properties in protocols must be explicitly synthesized in order to exist.
+ * One property per line; one `@synthesize` per line.
  
 ### Methods
 
  * Start with class methods, followed by init methods.
- * Seprate class methods from instance methods with an empty line.
+ * Separate class methods from instance methods with an empty line.
  * Follow this style:
    - Start with `-` or `+` character
    - Space
@@ -91,6 +100,7 @@ NSDictionary *swiftRadianceThresholds;
  
 ### Miscellaneous 
 
+ * Always use Objective-C primitive types instead of C types (i.e. use `NSUInteger` instead of `unsigned int`)
  * Use forward class declarations whenever possible with `@class`.
  * Don't put a space between an object type and the protocol it conforms to. 
  
@@ -119,16 +129,12 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 Blah *a = (stuff == thing ? foo : bar);
 ```
 
- * There shouldn't be a space between a cast and the variable being cast.
-
-``` objc
-NewType a = (NewType)b;
-```
 
 ## Control Structures
 
- * Always surround `if` bodies with curly braces even if it's a single-line `if`.
+ * Always surround `if`, `while`, `for`, `do`, `switch`, `case` bodies with curly braces even if it's a single-line statement.
  * All curly braces should begin on a new line. They should end on a new line.
+ * All curly braces will always live "alone" in their own line.
  
 ```objc
 if (variable == 3)
@@ -137,12 +143,10 @@ if (variable == 3)
 }
 ```
  
- * Put a single space after keywords and before their parentheses.
  * Return and break early.
- * No spaces between parentheses and their contents.
 
 ```objc
-if (shitIsBad)
+if (shitIsBad == YES)
 {
 	return;
 }
@@ -159,7 +163,6 @@ else
 
 ## Blocks
 
- * Blocks should have a space between their return type and name.
  * Block definitions should omit their return type when possible.
  * Block definitions should omit their arguments if they are `void`.
 
