@@ -237,4 +237,5 @@ NSDictionary *keyedShit = @{
  * Category methods should always be prefixed.
  * If you need to expose private methods for subclasses or unit testing, create a class extension named `Class+Private`.
 
-  test 2 again
+
+test 2 again
