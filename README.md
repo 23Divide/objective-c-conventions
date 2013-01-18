@@ -1,6 +1,6 @@
 # 23Divide Objective-C coding conventions
 
-# I'm adding shit to this branch called "Adding shit"
+# I'm adding shit to this branch called "ADDING SHIT"
 
 ## Whitespaces
 
