@@ -1,5 +1,7 @@
 # 23Divide Objective-C coding conventions
 
+# I'm adding shit to this branch called "Adding shit"
+
 ## Whitespaces
 
  * Tabs, not spaces.
